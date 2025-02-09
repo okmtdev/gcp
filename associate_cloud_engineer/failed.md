@@ -7,14 +7,8 @@
 > [!TIP]
 > gcloud コマンドラインツールを--preview フラグを使用して実行する。実行結果で相互に依存するリソースの状態を確認する。
 
-> [!NOTE]
-> Helpful advice for doing things better or more easily.
-
 > [!WARNING]
 > --dry-run は存在しない
-
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
 
 ## VM インスタンスの停止コマンド
 
@@ -37,6 +31,19 @@
 
 > [!WARNING]
 > gcloud app copy は無効なコマンド。
+
+## Cloud Spanner における自動スケーリング設定
+
+あなたは Cloud Spanner をデータベースとして使用するアプリケーションを管理しています。アプリケーションのトラフィックに基づいて Spanner ノードをスケーリングする必要があります。迅速かつ自動的にスケーリングを実行するのに適切な手順を下記から選択して下さい。
+
+> [!TIP]
+> Cloud Spanner インスタンスの CPU 使用率がしきい値の範囲外となった時にトリガーされる Cloud Monitoring アラートポリシーを作成し、通知チャネルを Cloud Pub/Sub に設定する。Pub/Sub トピックをサブスクライブし、リソースをスケーリングする Cloud Functions を作成する。
+
+> [!NOTE]
+> Cloud Monitoring で Cloud Spanner インスタンスの CPU 使用率メトリクスを設定し、しきい値に基づいたアラートを作成することにより、Webhook にアラートを送信することが出来ます。また、その HTTP Webhook をリッスンする Cloud Functions 関数内でスケーリングを行うことにより、自動的に Spanner ノードをスケーリングできます。
+
+> [!WARNING]
+> Cloud Spanner インスタンスの CPU 使用率がしきい値の範囲外となった時にトリガーされる Cloud Monitoring アラートポリシーを作成し、通知チャネルをサポートエンジニアの SMS に設定する。サポートは SMS に応じてリソースをスケーリングする。
 
 # 本で間違った問題
 
